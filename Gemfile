@@ -5,8 +5,15 @@ ruby '3.0.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4'
+
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3', '~> 1.4'
+# 開発環境(ローカル)ではSQLite3を使用
+gem 'sqlite3', group: :development
+# 本番環境(heroku)ではPostgreSQLを使用
+gem 'pg', group: :production
+
+
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -55,5 +62,3 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'sqlite3', group: :development
-gem 'pg', group: :production
